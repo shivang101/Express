@@ -33,15 +33,15 @@ const tourSchema = new mongoose.Schema({
   },
   price: {
     type: Number,
-    required: true
+    required: [true, 'A tour must have a price']
   }
 });
 
 const Tour = mongoose.model('Tour', tourSchema);
 
 const testTour = new Tour({
-  name: 'The Park Camper',
-  price: 997
+  name: 'The adventure Island',
+  price: 999
 });
 
 testTour
